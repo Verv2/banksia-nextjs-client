@@ -2,6 +2,7 @@ import React from "react";
 import Hero from "./Hero";
 import HomeProperty from "./HomeProperty";
 import Cities from "./Cities";
+import WhyUs from "./WhyUs";
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
       <Hero />
       <HomeProperty />
       <Cities />
+      <WhyUs />
     </div>
   );
 };
