@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import React, { ReactNode } from "react";
 import Navbar from "./component/Shared/Navbar/Navbar";
+import Footer from "./component/Shared/Footer/Footer";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -9,12 +10,10 @@ export const metadata: Metadata = {
 
 const CommonLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
   return (
-    <div className="w-full max-w-[1800px] m-auto">
+    <div className="w-full m-auto">
       <Navbar />
       {children}
-      <div>
-        <h2>Footer</h2>
-      </div>
+      <Footer />
     </div>
   );
 };
