@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div className="h-[5000px]">
+    <div className="">
       <h2>This is footer component</h2>
     </div>
   );

@@ -15,7 +15,7 @@ const Hero = () => {
   return (
     <section
       style={backgroundImageStyle}
-      className="w-full lg:h-[842px] m-auto py-[200px] absolute top-0"
+      className="w-full lg:h-[842px] m-auto py-[200px] -mt-[84px] flex items-center justify-center"
     >
       <div className="lg:w-[700px] m-auto">
         <div className="flex flex-col gap-5">
@@ -25,14 +25,14 @@ const Hero = () => {
           <h2 className="text-4xl lg:text-5xl text-center text-white font-semibold">
             love to live
           </h2>
-          <p className="text-lg text-white">
+          <p className="text-lg text-white px-10">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum
             saepe cupiditate quas fugit, voluptate accusamus temporibus
             perspiciatis dolorem voluptatibus blanditiis ipsum eaque laudantium.
             Minus, accusamus officiis neque fugit perspiciatis magnam?
           </p>
         </div>
-        <div className="lg:w-[600px] mx-auto relative mt-5">
+        <div className="lg:w-[500px] mx-auto relative mt-5">
           <Input
             type="text"
             placeholder="Enter your location"
