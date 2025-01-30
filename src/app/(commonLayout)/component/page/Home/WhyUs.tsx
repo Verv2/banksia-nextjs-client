@@ -4,11 +4,11 @@ import Image from "next/image";
 
 const WhyUs = () => {
   return (
-    <section className="lg:w-[1600px] m-auto mt-20 flex justify-between items-center gap-10 px-20 rounded-md py-5">
-      <div>
+    <section className="lg:w-[1600px] m-auto mt-20 flex justify-between items-center gap-10  rounded-md px-5 py-3 lg:px-20 lg:py-5">
+      <div className="hidden lg:block">
         <Image src={whyUs} alt="why-choose-us" />
       </div>
-      <div>
+      <div className="w-full">
         <div>
           <h2 className="text-2xl lg:text-4xl font-semibold mb-5">
             Why Choose Us?
@@ -19,7 +19,7 @@ const WhyUs = () => {
           </p>
         </div>
         {/* condition */}
-        <div className="w-[70%]">
+        <div className="lg:w-[70%]">
           <div className="flex items-center gap-5 rounded-md shadow-[3px_8px_10px_-2px_rgba(0,_0,_0,_0.1)] p-5">
             <School size={60} />
             <p>
