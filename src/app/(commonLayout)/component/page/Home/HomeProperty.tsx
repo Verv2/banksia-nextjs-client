@@ -19,7 +19,7 @@ const backgroundImageStyle = {
 
 const HomeProperty = () => {
   return (
-    <section className="w-[1600px] m-auto mt-20">
+    <section className="lg:w-[1600px] m-auto mt-20">
       <h2 className="text-4xl font-semibold text-center mb-10">Home For you</h2>
       <div>
         <Carousel

@@ -32,16 +32,16 @@ const Cities = () => {
   };
 
   return (
-    <section className="w-[1600px] m-auto mt-20">
+    <section className="lg:w-[1600px] m-auto mt-20">
       <div>
-        <h2 className="text-4xl font-semibold text-center mb-5">
+        <h2 className="text-2xl lg:text-4xl font-semibold text-center mb-5">
           Find Properties in This Cities
         </h2>
-        <p className="text-lg text-center mb-10">
+        <p className="lg:text-lg text-center mb-10">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium.
         </p>
       </div>
-      <div className="h-[600px] grid grid-cols-4 grid-rows-2 gap-5">
+      <div className="lg:h-[600px] grid grid-cols-1 lg:grid-cols-4 grid-rows-4 lg:grid-rows-2 gap-5">
         <div
           style={londonStyle}
           className="rounded-lg col-span-2 bg-blue-500 bg-center bg-no-repeat bg-cover p-10"
