@@ -15,14 +15,14 @@ const Hero = () => {
   return (
     <section
       style={backgroundImageStyle}
-      className="w-full h-[842px] m-auto py-[200px] absolute top-0"
+      className="w-full lg:h-[842px] m-auto py-[200px] absolute top-0"
     >
-      <div className="w-[700px] m-auto">
+      <div className="lg:w-[700px] m-auto">
         <div className="flex flex-col gap-5">
-          <h2 className="text-5xl text-white text-center font-semibold">
+          <h2 className="text-4xl lg:text-5xl text-white text-center font-semibold">
             Discover a place you&apos;ll
           </h2>
-          <h2 className="text-5xl text-center text-white font-semibold">
+          <h2 className="text-4xl lg:text-5xl text-center text-white font-semibold">
             love to live
           </h2>
           <p className="text-lg text-white">
@@ -32,7 +32,7 @@ const Hero = () => {
             Minus, accusamus officiis neque fugit perspiciatis magnam?
           </p>
         </div>
-        <div className="w-[600px] mx-auto relative mt-5">
+        <div className="lg:w-[600px] mx-auto relative mt-5">
           <Input
             type="text"
             placeholder="Enter your location"
