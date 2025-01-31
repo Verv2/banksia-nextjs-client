@@ -7,7 +7,7 @@ const About = () => {
   return (
     <section className="lg:w-[1180px] m-auto">
       <div className="lg:flex lg:justify-between mt-5">
-        <div className="flex flex-col justify-center items-center -mt-10">
+        <div className="flex flex-col justify-center items-center lg:-mt-10">
           <h2 className="text-4xl font-semibold lg:hidden">ABOUT US</h2>
           <Image
             src={aboutHome}
@@ -26,7 +26,7 @@ const About = () => {
           />
         </div>
       </div>
-      <div className="w-[70%] m-auto leading-10 text-lg mt-20">
+      <div className="lg:w-[70%] px-2 m-auto leading-10 text-lg mt-20">
         <p>
           Welcome to Banksia, where London living meets quirky charm and modern
           convenience! We’re not just another serviced accommodation
