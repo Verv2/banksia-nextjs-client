@@ -7,21 +7,21 @@ import { Separator } from "@/components/ui/separator";
 
 const Footer = () => {
   return (
-    <footer className="bg-black py-10 mt-20 text-white">
-      <div className="w-[1600px] m-auto">
-        <div className="flex justify-between items-center">
+    <footer className="bg-black py-10 mt-20 text-white text-center lg:text-left">
+      <div className="lg:w-[1600px] m-auto">
+        <div className="flex flex-col lg:flex-row justify-between items-center">
           {/* logo with address */}
-          <div>
+          <div className="mb-3">
             <Image src={logo} alt="logo" width={120} />
             <p>team@banksialondon.com</p>
             <p>29-31 Adelaide Road, London, NW3 3QB</p>
           </div>
 
           {/* main part */}
-          <div className="flex flex-col items-center justify-center mb-5">
-            <p className="mb-2">Thank you for considering Banksia. We look</p>
-            <p className="mb-8">
-              forward to hearing from you and assisting you on your journey.
+          <div className="flex flex-col items-center justify-center px-1 mb-5">
+            <p className="mb-5 lg:text-center">
+              Thank you for considering Banksia. We look <br /> forward to
+              hearing from you and assisting you on your journey.
             </p>
             <Button className="bg-colorPrimary hover:bg-colorPrimary/50">
               Get in touch

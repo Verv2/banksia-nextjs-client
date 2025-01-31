@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 // import logo from "../../../../../assets/logos/logo.png";
-import logo from "../../../../../assets/logos/banksia.png";
+import logo from "../../../../../assets/logos/logo-banksia.png";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
@@ -36,7 +36,7 @@ const Navbar = () => {
       <div className="lg:w-[1600px] m-auto flex justify-between items-center">
         <div>
           <Link href="/">
-            <Image src={logo} alt="logo" width={60} />
+            <Image src={logo} alt="logo" width={100} />
           </Link>
         </div>
         <div>
