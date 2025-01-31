@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import logo from "../../../../../assets/logos/logo-bg.png";
+// import logo from "../../../../../assets/logos/logo.png";
+import logo from "../../../../../assets/logos/banksia.png";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
@@ -46,7 +47,7 @@ const Navbar = () => {
   return (
     <nav
       className={cn(
-        "flex justify-between items-center px-14 py-3 sticky top-0 z-50 bg-gray-500 bg-clip-padding backdrop-filter  backdrop-blur bg-opacity-10 backdrop-saturate-100 backdrop-contrast-100",
+        "flex justify-between items-center px-14 py-3 sticky top-0 z-50 bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur bg-opacity-10 backdrop-saturate-100 backdrop-contrast-100",
         isHomePage && !isScrolled ? "text-white" : "text-black"
       )}
     >

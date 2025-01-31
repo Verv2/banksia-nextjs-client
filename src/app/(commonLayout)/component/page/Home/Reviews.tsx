@@ -16,7 +16,7 @@ const Reviews = () => {
 
   return (
     <section className="bg-sky-100 p-10 mt-20">
-      <div className="w-[1000px] m-auto">
+      <div className="lg:w-[1000px] m-auto">
         <h2 className="text-2xl lg:text-4xl font-semibold text-center mb-5">
           What our client are saying about us
         </h2>
@@ -25,14 +25,14 @@ const Reviews = () => {
             <CarouselContent>
               {Array.from({ length: 5 }).map((_, index) => (
                 <CarouselItem key={index}>
-                  <div className="flex gap-10 items-center">
+                  <div className="flex gap-10 items-center flex-col lg:flex-row">
                     {/* image */}
                     <div
                       style={peopleStyle}
                       className="w-[200px] h-[300px] bg-center bg-no-repeat bg-cover rounded-xl"
                     ></div>
                     {/* review */}
-                    <div className="w-[750px]">
+                    <div className="lg:w-[750px]">
                       <div className="flex gap-5">
                         <div className="w-[50px] h-[50px] bg-colorPrimary/60 flex items-center justify-center rounded-lg">
                           <Quote size={40} />
