@@ -11,7 +11,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="lg:w-[1600px] m-auto mt-10">
+    <section className="lg:px-10 m-auto mt-10">
       <div className="flex flex-col lg:flex-row items-center justify-center gap-20">
         <div
           style={contactStyle}

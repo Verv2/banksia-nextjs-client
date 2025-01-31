@@ -19,9 +19,9 @@ const backgroundImageStyle = {
 
 const HomeProperty = () => {
   return (
-    <section className="lg:w-[1600px] m-auto mt-20">
+    <section className="lg:px-10 m-auto mt-20">
       <h2 className="text-4xl font-semibold text-center mb-10">Home For you</h2>
-      <div>
+      <div className="px-10">
         <Carousel
           opts={{
             align: "start",
@@ -30,7 +30,7 @@ const HomeProperty = () => {
         >
           <CarouselContent>
             {Array.from({ length: 5 }).map((_, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4">
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                 <div className="rounded-md shadow-[3px_8px_10px_-2px_rgba(0,_0,_0,_0.1)] mb-4">
                   <div
                     style={backgroundImageStyle}

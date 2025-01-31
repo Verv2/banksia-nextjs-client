@@ -33,7 +33,7 @@ const Navbar = () => {
         isHomePage && !isScrolled ? "text-white" : "text-black"
       )}
     >
-      <div className="lg:w-[1600px] m-auto flex justify-between items-center">
+      <div className="lg:px-10 m-auto flex justify-between items-center">
         <div>
           <Link href="/">
             <Image src={logo} alt="logo" width={100} />

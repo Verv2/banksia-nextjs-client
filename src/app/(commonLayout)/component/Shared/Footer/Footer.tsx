@@ -8,7 +8,7 @@ import { Separator } from "@/components/ui/separator";
 const Footer = () => {
   return (
     <footer className="bg-black py-10 mt-20 text-white text-center lg:text-left">
-      <div className="lg:w-[1600px] m-auto">
+      <div className="lg:px-10 m-auto">
         <div className="flex flex-col lg:flex-row justify-between items-center">
           {/* logo with address */}
           <div className="mb-3">
@@ -93,8 +93,8 @@ const Footer = () => {
       <Separator className="my-5" />
       <div>
         <p className="text-center">
-          Copyright © {new Date().getFullYear()} - All right reserved. A company
-          owned and registered by Verv Group Skopje LLC in North Macedonia
+          Copyright © {new Date().getFullYear()} - All right reserved by
+          Banksia.
         </p>
       </div>
     </footer>

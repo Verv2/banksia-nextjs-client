@@ -32,7 +32,7 @@ const Cities = () => {
   };
 
   return (
-    <section className="lg:w-[1600px] m-auto mt-20">
+    <section className="lg:px-10 m-auto mt-20">
       <div>
         <h2 className="text-2xl lg:text-4xl font-semibold text-center mb-5">
           Find Properties in This Cities
