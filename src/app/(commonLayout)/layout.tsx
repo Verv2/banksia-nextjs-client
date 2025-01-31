@@ -12,6 +12,7 @@ const CommonLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
   return (
     <div className="w-full m-auto">
       <Navbar />
+      {/* <ResponsiveNavbar /> */}
       {children}
       <Footer />
     </div>
