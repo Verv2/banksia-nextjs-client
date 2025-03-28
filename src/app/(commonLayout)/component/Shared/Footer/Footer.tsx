@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="lg:px-10 m-auto">
         <div className="flex flex-col lg:flex-row justify-between items-center">
           {/* logo with address */}
-          <div className="mb-3">
+          <div className="mb-3 flex items-center justify-center flex-col lg:block">
             <Image src={logo} alt="logo" width={120} />
             <p>team@banksialondon.com</p>
             <p>29-31 Adelaide Road, London, NW3 3QB</p>
@@ -37,7 +37,7 @@ const Footer = () => {
                   <Link href="/about">About us</Link>
                 </li>
                 <li>
-                  <Link href="/about">Terms & Conditions</Link>
+                  <Link href="/terms-and-condition">Terms & Conditions</Link>
                 </li>
               </ul>
             </div>
@@ -97,8 +97,8 @@ const Footer = () => {
       <Separator className="my-5" />
       <div>
         <p className="text-center">
-          Copyright © {new Date().getFullYear()} - All right reserved by
-          Banksia.
+          Copyright © {new Date().getFullYear()} - All right reserved by Banksia
+          Limited (16025193)
         </p>
       </div>
     </footer>

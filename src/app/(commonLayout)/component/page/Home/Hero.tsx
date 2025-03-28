@@ -1,6 +1,9 @@
+"use client";
+
 import { Input } from "@/components/ui/input";
 import heroImage from "../../../../../assets/images/banner.png";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 const Hero = () => {
   const backgroundImageStyle = {
@@ -9,9 +12,14 @@ const Hero = () => {
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     backgroundColor: "lightcyan",
-    // width: "1216px",
-    // height: "528px",
   };
+
+  const router = useRouter();
+
+  const handleOnClick = () => {
+    router.push("https://www.spareroom.co.uk/u9042565");
+  };
+
   return (
     <section
       style={backgroundImageStyle}
@@ -46,7 +54,10 @@ const Hero = () => {
             className="pr-28"
           />
           <div className="w-24 absolute top-0 right-0">
-            <Button className="w-full bg-colorPrimary font-semibold">
+            <Button
+              className="w-full bg-colorPrimary font-semibold"
+              onClick={handleOnClick}
+            >
               Search
             </Button>
           </div>
