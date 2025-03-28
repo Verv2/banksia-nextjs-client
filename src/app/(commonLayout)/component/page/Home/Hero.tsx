@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   const backgroundImageStyle = {
-    backgroundImage: `url(${heroImage.src})`,
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${heroImage.src})`,
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
@@ -15,22 +15,29 @@ const Hero = () => {
   return (
     <section
       style={backgroundImageStyle}
-      className="w-full lg:h-[842px] m-auto py-[200px] -mt-[84px] flex items-center justify-center"
+      className="w-full lg:h-[calc(100vh-84px)] m-auto  flex items-center justify-center px-2 py-4 lg:py-0 lg:px-0"
     >
-      <div className="lg:w-[700px] m-auto">
+      <div className=" m-auto">
         <div className="flex flex-col gap-5">
-          <h2 className="text-4xl lg:text-5xl text-white text-center font-semibold">
-            Discover a place you&apos;ll
+          <h2 className="text-3xl lg:text-4xl text-white text-center font-semibold">
+            Stay Wise, Book Banksia
           </h2>
-          <h2 className="text-4xl lg:text-5xl text-center text-white font-semibold">
-            love to live
+          <h2 className="text-3xl lg:text-4xl text-center text-white font-semibold">
+            Flexible terms. Fair prices. Only on Banksia.
           </h2>
-          <p className="text-lg text-white px-10">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum
-            saepe cupiditate quas fugit, voluptate accusamus temporibus
-            perspiciatis dolorem voluptatibus blanditiis ipsum eaque laudantium.
-            Minus, accusamus officiis neque fugit perspiciatis magnam?
-          </p>
+          <div className="lg:px-[200px] text-white px-10 text-center">
+            <p className=" text-2xl font-medium mb-3">
+              Looking for a room in London?
+            </p>
+            <p className="text-lg">
+              Banksia offers modern, fully-managed rentals with flexible terms,
+              smart lock access, and zero hassle. As corporate landlords, we
+              provide a more reliable and professional alternative to
+              traditional agents and private landlords. Get £50 off your first
+              month’s rent and enjoy exclusive giveaways when you secure your
+              booking. Smart stays, done right.
+            </p>
+          </div>
         </div>
         <div className="lg:w-[500px] mx-auto relative mt-5">
           <Input
