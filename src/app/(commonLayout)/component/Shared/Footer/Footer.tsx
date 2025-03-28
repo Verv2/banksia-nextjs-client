@@ -39,6 +39,9 @@ const Footer = () => {
                 <li>
                   <Link href="/terms-and-condition">Terms & Conditions</Link>
                 </li>
+                <li>
+                  <Link href="/privacy-policy">Privacy Policy</Link>
+                </li>
               </ul>
             </div>
             {/* social media */}

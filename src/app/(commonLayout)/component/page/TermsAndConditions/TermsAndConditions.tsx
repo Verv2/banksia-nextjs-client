@@ -5,7 +5,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Separator } from "@/components/ui/separator";
-import Link from "next/link";
 
 const TermsAndConditions = () => {
   return (
@@ -270,12 +269,12 @@ const TermsAndConditions = () => {
         <p>
           For any questions about these Terms and Conditions, please contact us
           at{" "}
-          <Link
-            href="mailto:support@example.com"
+          <a
+            href="mailto:support@banksialondon.com"
             className="underline underline-offset-4 hover:text-primary"
           >
             support@banksialondon.com
-          </Link>
+          </a>
         </p>
       </div>
     </div>
