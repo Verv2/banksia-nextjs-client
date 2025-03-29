@@ -11,9 +11,6 @@ const PrivacyPolicy = () => {
     <div className="container max-w-4xl py-12">
       <div className="space-y-2 text-center mb-8">
         <h1 className="text-3xl font-bold">Privacy Policy for Banksia</h1>
-        {/* <p className="text-muted-foreground">
-          Last updated: {new Date().toLocaleDateString()}
-        </p> */}
       </div>
 
       <div className="bg-card p-6 rounded-lg border shadow-sm">
@@ -148,7 +145,7 @@ const PrivacyPolicy = () => {
           </AccordionItem>
 
           <AccordionItem value="item-7">
-            <AccordionTrigger className="text-lg font-medium">
+            <AccordionTrigger className="text-lg font-medium text-left">
               CCPA Privacy Rights (California Residents)
             </AccordionTrigger>
             <AccordionContent>
@@ -171,7 +168,7 @@ const PrivacyPolicy = () => {
           </AccordionItem>
 
           <AccordionItem value="item-8">
-            <AccordionTrigger className="text-lg font-medium">
+            <AccordionTrigger className="text-lg font-medium text-left">
               GDPR Data Protection Rights (EU/UK Residents)
             </AccordionTrigger>
             <AccordionContent>
