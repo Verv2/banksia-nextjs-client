@@ -17,6 +17,19 @@ const HomeProperty = () => {
   const properties: IListingData[] = listingData;
   const route = useRouter();
 
+  const requestOptions: RequestInit = {
+    method: "GET",
+    redirect: "follow" as RequestRedirect,
+  };
+
+  fetch(
+    "https://auth.arthuronline.co.uk/oauth/authorize?client_id=b0a7141b1575398935acd1cbfea08addafb317bf7ca114343358f1b235c0d720&redirect_uri=https://banksialondon.com",
+    requestOptions
+  )
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.log("error", error));
+
   const handleOnClick = (id: string) => {
     route.push(`/listing/${id}`);
   };

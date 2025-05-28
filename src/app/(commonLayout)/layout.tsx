@@ -5,7 +5,7 @@ import Footer from "./component/Shared/Footer/Footer";
 
 export const metadata: Metadata = {
   title: "Home",
-  description: "Welcome to InnovativeHR home",
+  description: "Welcome to Banksia",
 };
 
 const CommonLayout = ({ children }: Readonly<{ children: ReactNode }>) => {

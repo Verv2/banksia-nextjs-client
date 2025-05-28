@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 // import { useEffect, useState } from "react";
 // import { usePathname } from "next/navigation";
 import { navigationLink } from "@/app/constant/navigation.link";
+import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   // const pathname = usePathname(); // Get current route
@@ -26,6 +27,17 @@ const Navbar = () => {
   //   return () => window.removeEventListener("scroll", handleScroll);
   // }, [isHomePage]);
 
+  const handleLogin = () => {
+    const clientId =
+      "b0a7141b1575398935acd1cbfea08addafb317bf7ca114343358f1b235c0d720";
+    const redirectUri = "https://banksialondon.com";
+    const state = "random_state_string"; // optional, use to prevent CSRF
+
+    const authUrl = `https://auth.arthuronline.co.uk/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code&state=${state}`;
+
+    window.location.href = authUrl;
+  };
+
   return (
     <nav className={cn("lg:px-14 py-3 sticky top-0 z-50 bg-white  text-black")}>
       <div className="lg:px-10 m-auto flex justify-between items-center">
@@ -41,6 +53,9 @@ const Navbar = () => {
                 <Link href={item.link}>{item.name}</Link>
               </li>
             ))}
+            <li>
+              <Button onClick={handleLogin}>Login</Button>
+            </li>
           </ul>
         </div>
       </div>
