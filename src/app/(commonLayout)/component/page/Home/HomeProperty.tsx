@@ -12,27 +12,16 @@ import { MapPin } from "lucide-react";
 import { listingData } from "../Listing/listingData";
 import { IListingData } from "@/types/property.type";
 import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
 
 const HomeProperty = () => {
   const properties: IListingData[] = listingData;
   const route = useRouter();
 
-  const requestOptions: RequestInit = {
-    method: "GET",
-    redirect: "follow" as RequestRedirect,
-  };
-
-  fetch(
-    "https://auth.arthuronline.co.uk/oauth/authorize?client_id=b0a7141b1575398935acd1cbfea08addafb317bf7ca114343358f1b235c0d720&redirect_uri=https://banksialondon.com",
-    requestOptions
-  )
-    .then((response) => response.text())
-    .then((result) => console.log(result))
-    .catch((error) => console.log("error", error));
-
   const handleOnClick = (id: string) => {
     route.push(`/listing/${id}`);
   };
+
   return (
     <section className="lg:px-10 m-auto mt-20">
       <h2 className="text-4xl font-semibold text-center mb-10">Home For you</h2>
@@ -79,6 +68,14 @@ const HomeProperty = () => {
           <CarouselPrevious className="bg-colorPrimary" />
           <CarouselNext className="bg-colorPrimary" />
         </Carousel>
+      </div>
+      <div className="flex items-center justify-center mt-4">
+        <Button
+          className="bg-colorPrimary"
+          onClick={() => route.push(`/properties?limit=20&page=1`)}
+        >
+          See All Properties
+        </Button>
       </div>
     </section>
   );

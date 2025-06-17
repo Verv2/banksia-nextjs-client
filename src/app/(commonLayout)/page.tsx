@@ -3,9 +3,9 @@ import Home from "./component/page/Home/Home";
 
 const page = () => {
   return (
-    <div>
+    <>
       <Home />
-    </div>
+    </>
   );
 };
 
