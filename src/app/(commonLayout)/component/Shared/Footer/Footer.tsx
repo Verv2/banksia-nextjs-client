@@ -15,7 +15,6 @@ const Footer = () => {
           <div className="mb-3 flex items-center justify-center flex-col lg:block">
             <Image src={logo} alt="logo" width={120} />
             <p>team@banksialondon.com</p>
-            <p>29-31 Adelaide Road, London, NW3 3QB</p>
           </div>
 
           {/* main part */}

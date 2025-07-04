@@ -2,12 +2,13 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Hero from "./Hero";
+// import Hero from "./Hero";
 import HomeProperty from "./HomeProperty";
 import Cities from "./Cities";
 import WhyUs from "./WhyUs";
 import { useRouter, useSearchParams } from "next/navigation";
 import { getAccessToken } from "@/actions/auth.action";
+import Hero2 from "./Hero2";
 
 const Home = () => {
   const searchParams = useSearchParams();
@@ -42,7 +43,8 @@ const Home = () => {
 
   return (
     <>
-      <Hero />
+      {/* <Hero /> */}
+      <Hero2 />
       <HomeProperty />
       <Cities />
       <WhyUs />

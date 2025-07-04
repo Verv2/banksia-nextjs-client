@@ -1,6 +1,6 @@
 import { Input } from "@/components/ui/input";
 import contactImage from "../../../../../assets/images/contact.jpg";
-import { MailPlus, MapPinHouse } from "lucide-react";
+import { MailPlus } from "lucide-react";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 
@@ -26,12 +26,12 @@ const Contact = () => {
                 <MailPlus />
                 <p className="text-lg font-semibold">team@banksialondon.com</p>
               </div>
-              <div className="flex items-center gap-3">
+              {/* <div className="flex items-center gap-3">
                 <MapPinHouse />
                 <p className="text-lg font-semibold">
                   29-31 Adelaide Road, London, NW3 3QB
                 </p>
-              </div>
+              </div> */}
             </div>
             {/* input field */}
             <div className="flex flex-col gap-5">
