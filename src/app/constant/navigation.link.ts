@@ -4,6 +4,10 @@ export const navigationLink = [
     link: "/",
   },
   {
+    name: "Partnership",
+    link: "/partnership",
+  },
+  {
     name: "About",
     link: "/about",
   },

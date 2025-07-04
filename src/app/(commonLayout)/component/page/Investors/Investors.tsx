@@ -27,12 +27,12 @@ const Investors = () => {
               Let Your Capital Grow with{" "}
               <span className="text-[#F16232]">Banksia</span>
             </h1>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
               Property backed placements focused on high yield multi occupancy
               HMO and serviced accommodation projects that can deliver up to{" "}
               <span className="text-[#F16232] font-bold">7% each year*</span>
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
                 className="bg-[#F16232] hover:bg-[#F16232]/90 text-white px-8 py-4 text-lg"
@@ -47,7 +47,7 @@ const Investors = () => {
               >
                 Download Brochure
               </Button>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

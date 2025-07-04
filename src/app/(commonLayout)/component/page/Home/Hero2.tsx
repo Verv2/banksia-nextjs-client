@@ -101,7 +101,7 @@ const Hero2 = () => {
                   variant="outline"
                   size="lg"
                   className="border-white bg-white/30 hover:bg-white px-8 py-4 text-lg"
-                  onClick={() => router.push("/properties")}
+                  onClick={() => router.push("/properties?page=1&limit=20")}
                 >
                   Explore Properties
                 </Button>
