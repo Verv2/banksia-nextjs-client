@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const WhyUs = () => {
   return (
-    <section className="lg:px-[150px] m-auto mt-20 flex justify-center items-center gap-10  rounded-md px-5 py-3 lg:py-5">
+    <section className="lg:px-[150px] m-auto flex justify-center items-center gap-10  rounded-md px-5 py-3 lg:py-20 bg-gray-50">
       <div className="hidden lg:block rounded-lg">
         <Image src={whyUs} alt="why-choose-us" className="rounded-lg" />
       </div>

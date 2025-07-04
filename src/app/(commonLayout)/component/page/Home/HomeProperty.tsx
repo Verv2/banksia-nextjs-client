@@ -8,76 +8,123 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-import { MapPin } from "lucide-react";
-import { listingData } from "../Listing/listingData";
-import { IListingData } from "@/types/property.type";
-import { useRouter } from "next/navigation";
+import { TDummyProperty } from "@/types/property.type";
 import { Button } from "@/components/ui/button";
+import PropertyCard from "./PropertyCard";
+import { useRouter } from "next/navigation";
+
+const properties: TDummyProperty[] = [
+  {
+    id: 1,
+    title: "Modern Studio in Shoreditch",
+    location: "Shoreditch, East London",
+    price: "£1,200",
+    period: "per month",
+    image:
+      "https://plus.unsplash.com/premium_photo-1686090449192-4ab1d00cb735?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    features: ["Studio", "1 Bath", "WiFi", "Furnished"],
+    badge: "Popular",
+  },
+  {
+    id: 2,
+    title: "Cozy Room in Camden",
+    location: "Camden, North London",
+    price: "£950",
+    period: "per month",
+    image:
+      "https://plus.unsplash.com/premium_photo-1687960116506-f31f84371838?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    features: ["Private Room", "Shared Bath", "WiFi", "Bills Included"],
+    badge: "New",
+  },
+  {
+    id: 3,
+    title: "Luxury Apartment in Canary Wharf",
+    location: "Canary Wharf, East London",
+    price: "£1,800",
+    period: "per month",
+    image:
+      "https://plus.unsplash.com/premium_photo-1687960116228-13d383d20188?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    features: ["1 Bed", "1 Bath", "Gym", "Concierge"],
+    badge: "Premium",
+  },
+  {
+    id: 4,
+    title: "Luxury Apartment in Canary Wharf",
+    location: "Canary Wharf, East London",
+    price: "£1,800",
+    period: "per month",
+    image:
+      "https://plus.unsplash.com/premium_photo-1687960116497-0dc41e1808a2?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    features: ["1 Bed", "1 Bath", "Gym", "Concierge"],
+    badge: "Premium",
+  },
+];
 
 const HomeProperty = () => {
-  const properties: IListingData[] = listingData;
+  // const properties: IListingData[] = listingData;
   const route = useRouter();
 
-  const handleOnClick = (id: string) => {
-    route.push(`/listing/${id}`);
-  };
+  // const handleOnClick = (id: string) => {
+  //   route.push(`/listing/${id}`);
+  // };
 
   return (
-    <section className="lg:px-10 m-auto mt-20">
-      <h2 className="text-4xl font-semibold text-center mb-10">Home For you</h2>
-      <div className="px-10">
-        <Carousel
-          opts={{
-            align: "start",
-          }}
-          className="w-full"
-        >
-          <CarouselContent>
-            {properties.map((property, index) => (
-              <CarouselItem
-                key={index}
-                className="md:basis-1/2 lg:basis-1/3 cursor-pointer"
-                onClick={() => handleOnClick(property.id)}
+    <>
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-7xl mx-auto">
+            {/* Section Header */}
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                Featured Properties in{" "}
+                <span className="text-[#F16232]">London</span>
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Discover our handpicked selection of premium properties across
+                London&apos;s most desirable neighborhoods. All fully managed
+                with flexible terms and smart access.
+              </p>
+            </div>
+
+            {/* Properties Grid */}
+            <div>
+              <Carousel
+                opts={{
+                  align: "start",
+                }}
+                className="w-full"
               >
-                <div className="rounded-md shadow-[3px_8px_10px_-2px_rgba(0,_0,_0,_0.1)] mb-4">
-                  <div
-                    style={{
-                      backgroundImage: `url(${property.image_urls[0].src})`,
-                    }}
-                    className="w-full h-[200px] rounded-t-md bg-center bg-no-repeat bg-cover"
-                  ></div>
-                  <div className="p-4">
-                    <div className="flex justify-between items-center mt-4">
-                      <h4 className="text-2xl font-semibold">
-                        {property.title}
-                      </h4>
-                      <h4 className="text-2xl font-semibold text-colorPrimary">
-                        &#163;{property.rent}
-                      </h4>
-                    </div>
-                    <div className="flex items-center gap-5 mt-5">
-                      <MapPin />
-                      <p className="text-lg"> {property.location.area}</p>
-                    </div>
-                    {/* property */}
-                  </div>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="bg-colorPrimary" />
-          <CarouselNext className="bg-colorPrimary" />
-        </Carousel>
-      </div>
-      <div className="flex items-center justify-center mt-4">
-        <Button
-          className="bg-colorPrimary"
-          onClick={() => route.push(`/properties?limit=20&page=1`)}
-        >
-          See All Properties
-        </Button>
-      </div>
-    </section>
+                <CarouselContent>
+                  {properties.map((property, index) => (
+                    <CarouselItem
+                      key={index}
+                      className="md:basis-1/2 lg:basis-1/3 cursor-pointer"
+                      // onClick={() => handleOnClick(property.id)}
+                    >
+                      <PropertyCard property={property} />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="bg-colorPrimary" />
+                <CarouselNext className="bg-colorPrimary" />
+              </Carousel>
+            </div>
+
+            {/* CTA Section */}
+            <div className="text-center mt-10">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-[#F16232] text-[#F16232] hover:bg-[#F16232] hover:text-white px-8 py-4 text-lg bg-transparent"
+                onClick={() => route.push("/properties")}
+              >
+                View All Properties
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 

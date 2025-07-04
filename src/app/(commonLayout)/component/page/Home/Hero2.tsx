@@ -110,7 +110,7 @@ const Hero2 = () => {
           </div>
 
           {/* Search Section - No Background */}
-          <div>
+          <div className="relative z-[999]">
             <form
               onSubmit={handleSubmit(onSubmit)}
               className="max-w-2xl mx-auto text-center"

@@ -129,3 +129,14 @@ export type TProperty = {
   }[];
   custom_fields?: any[];
 };
+
+export type TDummyProperty = {
+  id: number;
+  title: string;
+  location: string;
+  price: string;
+  period: string;
+  image: string;
+  features: string[];
+  badge: string;
+};
