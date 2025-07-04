@@ -117,9 +117,9 @@ export type TProperty = {
   epc_urls?: string[];
   floor_plan_urls?: string[];
   thumbnail_urls?: string[];
-  image_urls?: string[];
-  features?: string[];
-  property_features?: string[];
+  image_urls: string[];
+  features: string[];
+  property_features: string[];
   additional_features?: string[];
   tags?: string[];
   notes: {

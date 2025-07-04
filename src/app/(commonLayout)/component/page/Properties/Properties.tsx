@@ -3,20 +3,19 @@
 
 import { getAllProperties } from "@/actions/query.action";
 import { TProperty } from "@/types/property.type";
-import { useEffect, useState } from "react";
-import SingleProperty from "./SingleProperty";
+import { useEffect, useMemo, useState } from "react";
 import PropertyLoading from "../../UI/PropertyLoading";
 import { useSearchParams } from "next/navigation";
 import { searchParamsToObject } from "@/lib/utils";
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import SinglePropertyCard from "./SinglePropertyCard";
 
 type TMeta = {
   limit: number;
@@ -27,12 +26,19 @@ type TMeta = {
 
 const Properties = () => {
   const searchParams = useSearchParams();
-  const paramsObject = searchParamsToObject(searchParams);
+  const paramsObject = useMemo(() => {
+    return searchParamsToObject(searchParams);
+  }, [searchParams]);
 
   const [properties, setProperties] = useState<TProperty[]>([]);
   const [meta, setMeta] = useState<TMeta | null>(null); // Adjust type as needed
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  const currentPage = Number(searchParams.get("page") || 1);
+  const limitPerPage = Number(searchParams.get("limit") || 20);
+  const totalPages = meta?.totalPage ?? 1;
+  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   console.log("Meta", meta);
   console.log("properties", properties);
@@ -59,31 +65,47 @@ const Properties = () => {
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 px-20 py-10">
         {properties.map((property) => (
-          <SingleProperty key={property._id} property={property} />
+          <SinglePropertyCard key={property._id} property={property} />
         ))}
       </div>
       <div>
         <Pagination>
           <PaginationContent>
             <PaginationItem>
-              <PaginationPrevious href="#" />
+              <PaginationPrevious
+                href={`?${new URLSearchParams({
+                  ...paramsObject,
+                  page: String(currentPage > 1 ? currentPage - 1 : 1),
+                  limit: String(limitPerPage),
+                })}`}
+              />
             </PaginationItem>
+
+            {pageNumbers.map((page) => (
+              <PaginationItem key={page}>
+                <PaginationLink
+                  href={`?${new URLSearchParams({
+                    ...paramsObject,
+                    page: String(page),
+                    limit: String(limitPerPage),
+                  })}`}
+                  isActive={page === currentPage}
+                >
+                  {page}
+                </PaginationLink>
+              </PaginationItem>
+            ))}
+
             <PaginationItem>
-              <PaginationLink href="#">1</PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#" isActive>
-                2
-              </PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#">3</PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationEllipsis />
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationNext href="#" />
+              <PaginationNext
+                href={`?${new URLSearchParams({
+                  ...paramsObject,
+                  page: String(
+                    currentPage < totalPages ? currentPage + 1 : totalPages
+                  ),
+                  limit: String(limitPerPage),
+                })}`}
+              />
             </PaginationItem>
           </PaginationContent>
         </Pagination>

@@ -1,10 +1,12 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Home from "./component/page/Home/Home";
 
 const page = () => {
   return (
     <>
-      <Home />
+      <Suspense fallback={<h1>Loading</h1>}>
+        <Home />
+      </Suspense>
     </>
   );
 };

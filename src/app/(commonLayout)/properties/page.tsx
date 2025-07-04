@@ -1,9 +1,13 @@
+import { Suspense } from "react";
 import Properties from "../component/page/Properties/Properties";
+import PropertyLoading from "../component/UI/PropertyLoading";
 
 const PropertiesPage = () => {
   return (
     <>
-      <Properties />
+      <Suspense fallback={<PropertyLoading repeat={8} />}>
+        <Properties />
+      </Suspense>
     </>
   );
 };

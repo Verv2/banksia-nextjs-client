@@ -1,13 +1,19 @@
+import { getSingleProperty } from "@/actions/query.action";
+import SingleProperty from "../../component/page/Properties/SingleProperty";
+
 const SinglePropertyPage = async ({
   params,
 }: {
   params: Promise<{ propertyId: string }>;
 }) => {
   const { propertyId } = await params;
+
+  const property = await getSingleProperty(propertyId);
+
   return (
-    <div>
-      <h2>This is single property page by id: {propertyId}</h2>
-    </div>
+    <>
+      <SingleProperty property={property} />
+    </>
   );
 };
 
