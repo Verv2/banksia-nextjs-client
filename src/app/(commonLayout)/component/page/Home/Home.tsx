@@ -10,6 +10,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { getAccessToken } from "@/actions/auth.action";
 import Hero2 from "./Hero2";
 import PropertiesInLondon from "./PropertiesInLondon";
+import ReadyToStart from "./ReadyToStart";
 
 const Home = () => {
   const searchParams = useSearchParams();
@@ -50,6 +51,7 @@ const Home = () => {
       {/* <Cities /> */}
       <PropertiesInLondon />
       <WhyUs />
+      <ReadyToStart />
     </>
   );
 };

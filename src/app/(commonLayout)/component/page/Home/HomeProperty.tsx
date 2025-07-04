@@ -116,7 +116,7 @@ const HomeProperty = () => {
                 size="lg"
                 variant="outline"
                 className="border-[#F16232] text-[#F16232] hover:bg-[#F16232] hover:text-white px-8 py-4 text-lg bg-transparent"
-                onClick={() => route.push("/properties")}
+                onClick={() => route.push("/properties?page=1&limit=20")}
               >
                 View All Properties
               </Button>
