@@ -8,57 +8,59 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-import { TDummyProperty } from "@/types/property.type";
+import { TProperty } from "@/types/property.type";
 import { Button } from "@/components/ui/button";
-import PropertyCard from "./PropertyCard";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { getAllProperties } from "@/actions/query.action";
+import SinglePropertyCard from "../Properties/SinglePropertyCard";
 
-const properties: TDummyProperty[] = [
-  {
-    id: 1,
-    title: "Modern Studio in Shoreditch",
-    location: "Shoreditch, East London",
-    price: "£1,200",
-    period: "per month",
-    image:
-      "https://plus.unsplash.com/premium_photo-1686090449192-4ab1d00cb735?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    features: ["Studio", "1 Bath", "WiFi", "Furnished"],
-    badge: "Popular",
-  },
-  {
-    id: 2,
-    title: "Cozy Room in Camden",
-    location: "Camden, North London",
-    price: "£950",
-    period: "per month",
-    image:
-      "https://plus.unsplash.com/premium_photo-1687960116506-f31f84371838?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    features: ["Private Room", "Shared Bath", "WiFi", "Bills Included"],
-    badge: "New",
-  },
-  {
-    id: 3,
-    title: "Luxury Apartment in Canary Wharf",
-    location: "Canary Wharf, East London",
-    price: "£1,800",
-    period: "per month",
-    image:
-      "https://plus.unsplash.com/premium_photo-1687960116228-13d383d20188?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    features: ["1 Bed", "1 Bath", "Gym", "Concierge"],
-    badge: "Premium",
-  },
-  {
-    id: 4,
-    title: "Luxury Apartment in Canary Wharf",
-    location: "Canary Wharf, East London",
-    price: "£1,800",
-    period: "per month",
-    image:
-      "https://plus.unsplash.com/premium_photo-1687960116497-0dc41e1808a2?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    features: ["1 Bed", "1 Bath", "Gym", "Concierge"],
-    badge: "Premium",
-  },
-];
+// const properties: TDummyProperty[] = [
+//   {
+//     id: 1,
+//     title: "Modern Studio in Shoreditch",
+//     location: "Shoreditch, East London",
+//     price: "£1,200",
+//     period: "per month",
+//     image:
+//       "https://plus.unsplash.com/premium_photo-1686090449192-4ab1d00cb735?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     features: ["Studio", "1 Bath", "WiFi", "Furnished"],
+//     badge: "Popular",
+//   },
+//   {
+//     id: 2,
+//     title: "Cozy Room in Camden",
+//     location: "Camden, North London",
+//     price: "£950",
+//     period: "per month",
+//     image:
+//       "https://plus.unsplash.com/premium_photo-1687960116506-f31f84371838?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     features: ["Private Room", "Shared Bath", "WiFi", "Bills Included"],
+//     badge: "New",
+//   },
+//   {
+//     id: 3,
+//     title: "Luxury Apartment in Canary Wharf",
+//     location: "Canary Wharf, East London",
+//     price: "£1,800",
+//     period: "per month",
+//     image:
+//       "https://plus.unsplash.com/premium_photo-1687960116228-13d383d20188?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     features: ["1 Bed", "1 Bath", "Gym", "Concierge"],
+//     badge: "Premium",
+//   },
+//   {
+//     id: 4,
+//     title: "Luxury Apartment in Canary Wharf",
+//     location: "Canary Wharf, East London",
+//     price: "£1,800",
+//     period: "per month",
+//     image:
+//       "https://plus.unsplash.com/premium_photo-1687960116497-0dc41e1808a2?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     features: ["1 Bed", "1 Bath", "Gym", "Concierge"],
+//     badge: "Premium",
+//   },
+// ];
 
 const HomeProperty = () => {
   // const properties: IListingData[] = listingData;
@@ -67,6 +69,18 @@ const HomeProperty = () => {
   // const handleOnClick = (id: string) => {
   //   route.push(`/listing/${id}`);
   // };
+
+  const [properties, setProperties] = useState<TProperty[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getAllProperties({})
+      .then((res) => setProperties(res.data.slice(0, 5)))
+      .catch((err) => console.error("Fetch error:", err))
+      .finally(() => setLoading(false));
+  }, []);
+
+  if (loading) return <p>Loading properties...</p>;
 
   return (
     <>
@@ -98,15 +112,14 @@ const HomeProperty = () => {
                   {properties.map((property, index) => (
                     <CarouselItem
                       key={index}
-                      className="md:basis-1/2 lg:basis-1/3 cursor-pointer"
-                      // onClick={() => handleOnClick(property.id)}
+                      className="md:basis-1/2 lg:basis-1/3"
                     >
-                      <PropertyCard property={property} />
+                      <SinglePropertyCard property={property} />
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious className="bg-colorPrimary" />
-                <CarouselNext className="bg-colorPrimary" />
+                <CarouselPrevious className="bg-colorPrimary ml-8" />
+                <CarouselNext className="bg-colorPrimary mr-8" />
               </Carousel>
             </div>
 

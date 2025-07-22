@@ -23,7 +23,7 @@ const SingleListing = ({ data }: { data: IListingData }) => {
   return (
     <div className="container mx-auto px-4 py-8 max-w-5xl">
       {/* Image Gallery */}
-      <ImageGallery images={data.image_urls} />
+      <ImageGallery images={data?.image_urls} />
 
       {/* Main Content */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

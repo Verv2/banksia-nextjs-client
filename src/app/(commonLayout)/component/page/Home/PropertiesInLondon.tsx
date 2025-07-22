@@ -1,8 +1,11 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Building, Coffee, Train, MapPin } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const areas = [
   {
@@ -64,6 +67,8 @@ const areas = [
 ];
 
 const PropertiesInLondon = () => {
+  const router = useRouter();
+
   return (
     <section className="py-20">
       <div className="container mx-auto px-4">
@@ -152,7 +157,12 @@ const PropertiesInLondon = () => {
                     </div>
 
                     <div className="flex gap-3">
-                      <Button className="flex-1 bg-[#F16232] hover:bg-[#F16232]/90 text-white">
+                      <Button
+                        className="flex-1 bg-[#F16232] hover:bg-[#F16232]/90 text-white"
+                        onClick={() =>
+                          router.push("properties?page=1&limit=20")
+                        }
+                      >
                         View Properties
                       </Button>
                       <Button

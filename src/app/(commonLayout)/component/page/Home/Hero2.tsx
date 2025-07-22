@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { Badge } from "@/components/ui/badge";
@@ -39,8 +40,6 @@ const Hero2 = () => {
     }
   }, [searchTerm]);
 
-  console.log("Hero component rendered", searchResults);
-
   const handleSeeAll = (query: string) => {
     const queryString = query.trim().split(" ").join("+");
     router.push(`/properties?searchTerm=${queryString}&page=1&limit=20`);
@@ -50,7 +49,6 @@ const Hero2 = () => {
     const queryData = {
       searchTerm: data.search,
     };
-    console.log("Search submitted:", queryData);
     const queryString = searchTerm.trim().split(" ").join("+");
     router.push(`/properties?searchTerm=${queryString}&page=1&limit=20`);
   };

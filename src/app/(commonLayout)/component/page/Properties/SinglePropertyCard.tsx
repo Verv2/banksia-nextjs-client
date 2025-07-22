@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { removeNumbers } from "@/lib/utils";
 import { TProperty } from "@/types/property.type";
 import { Bath, Bed, Building, Home, MapPin } from "lucide-react";
 import Image from "next/image";
@@ -13,19 +14,24 @@ const SinglePropertyCard = ({ property }: { property: TProperty }) => {
     router.push(`/properties/${property._id}`);
   };
 
+  let ref;
+  if (property.ref) {
+    ref = removeNumbers(property.ref);
+  }
+
   return (
-    <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 group">
+    <Card className="flex flex-col justify-between h-full overflow-hidden hover:shadow-lg transition-shadow duration-300 group">
       <div className="relative h-48 bg-gradient-to-br from-blue-50 to-indigo-100">
-        <Image
-          src={
-            property?.main_image_url
-              ? property.main_image_url
-              : `placeholder.svg?height=200&width=400`
-          }
-          alt={`Property at ${property.address_line_1}`}
-          fill
-          className="object-cover group-hover:scale-105 transition-transform duration-300"
-        />
+        {property?.main_image_url ? (
+          <Image
+            src={property.main_image_url}
+            alt={`Property at ${property.address_line_1}`}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+        ) : (
+          <div className="bg-gray-200 w-full h-full" />
+        )}
         <div className="absolute top-4 right-4">
           <Badge variant="secondary" className="bg-colorPrimary/90">
             {property.total_units} Units
@@ -33,12 +39,10 @@ const SinglePropertyCard = ({ property }: { property: TProperty }) => {
         </div>
       </div>
 
-      <CardContent className="p-6">
+      <CardContent className="p-6 flex-1 flex flex-col justify-between">
         <div className="space-y-3">
           <div>
-            <h3 className="font-semibold text-lg text-gray-900 mb-1">
-              {property.ref}
-            </h3>
+            <h3 className="font-semibold text-lg text-gray-900 mb-1">{ref}</h3>
             <div className="flex items-center text-gray-600 text-sm">
               <MapPin className="w-4 h-4 mr-1" />
               <span>
@@ -73,7 +77,7 @@ const SinglePropertyCard = ({ property }: { property: TProperty }) => {
         </div>
       </CardContent>
 
-      <CardFooter className="px-6 pb-6 pt-0">
+      <CardFooter className="px-6 pb-6 pt-0 mt-auto">
         <Button className="w-full bg-colorPrimary" onClick={handleViewDetails}>
           View Details
         </Button>

@@ -15,8 +15,6 @@ const LoginPage = () => {
     try {
       setLoading(true);
       const loginUrl = await getArthurAuth();
-      console.log("Fetched Leave Requests:", loginUrl);
-
       window.location.href = loginUrl;
     } catch (error) {
       console.error("Login with Arthur failed:", error);

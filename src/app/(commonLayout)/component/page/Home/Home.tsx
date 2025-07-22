@@ -8,9 +8,10 @@ import HomeProperty from "./HomeProperty";
 import WhyUs from "./WhyUs";
 import { useRouter, useSearchParams } from "next/navigation";
 import { getAccessToken } from "@/actions/auth.action";
-import Hero2 from "./Hero2";
 import PropertiesInLondon from "./PropertiesInLondon";
 import ReadyToStart from "./ReadyToStart";
+import Hero from "./Hero";
+import { Loading } from "../../UI/Loading";
 
 const Home = () => {
   const searchParams = useSearchParams();
@@ -27,8 +28,8 @@ const Home = () => {
 
     const exchange = async () => {
       try {
-        const result = await getAccessToken({ code });
-        console.log("Token result:", result);
+        await getAccessToken({ code });
+
         router.push("/");
       } catch (err: any) {
         const message = err?.message || "Token exchange failed";
@@ -41,14 +42,12 @@ const Home = () => {
     exchange();
   }, [searchParams, router]);
 
-  if (loading) return <p>Exchanging data...</p>;
+  if (loading) return <Loading />;
 
   return (
     <>
-      {/* <Hero /> */}
-      <Hero2 />
+      <Hero />
       <HomeProperty />
-      {/* <Cities /> */}
       <PropertiesInLondon />
       <WhyUs />
       <ReadyToStart />

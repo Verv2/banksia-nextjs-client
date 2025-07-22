@@ -31,7 +31,7 @@ const Properties = () => {
   }, [searchParams]);
 
   const [properties, setProperties] = useState<TProperty[]>([]);
-  const [meta, setMeta] = useState<TMeta | null>(null); // Adjust type as needed
+  const [meta, setMeta] = useState<TMeta | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -39,9 +39,6 @@ const Properties = () => {
   const limitPerPage = Number(searchParams.get("limit") || 20);
   const totalPages = meta?.totalPage ?? 1;
   const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
-
-  console.log("Meta", meta);
-  console.log("properties", properties);
 
   useEffect(() => {
     const loadData = async () => {
@@ -63,12 +60,12 @@ const Properties = () => {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 px-20 py-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8 px-4 sm:px-6 md:px-10 lg:px-20 py-6">
         {properties.map((property) => (
           <SinglePropertyCard key={property._id} property={property} />
         ))}
       </div>
-      <div>
+      <div className="overflow-x-auto">
         <Pagination>
           <PaginationContent>
             <PaginationItem>

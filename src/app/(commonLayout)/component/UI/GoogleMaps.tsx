@@ -16,11 +16,7 @@ const GoogleMaps = ({
 }) => {
   const mapRef = useRef<HTMLDivElement>(null);
 
-  console.log("Google Maps component locationMarker", locationMarkers);
-
   useEffect(() => {
-    console.log("Google Maps component mounted");
-
     const initMap = async () => {
       const loader = new Loader({
         apiKey: envConfig.googleMapApiKey as string,
