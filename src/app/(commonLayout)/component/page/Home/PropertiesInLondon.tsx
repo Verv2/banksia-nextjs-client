@@ -88,7 +88,7 @@ const PropertiesInLondon = () => {
           {/* Areas Grid */}
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {areas.map((area) => {
-              const IconComponent = area.icon;
+              // const IconComponent = area.icon;
               return (
                 <Card
                   key={area.id}
@@ -121,7 +121,7 @@ const PropertiesInLondon = () => {
                   </div>
 
                   <CardContent className="p-6">
-                    <div className="flex items-start justify-between mb-4">
+                    {/* <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center space-x-3">
                         <div className="w-10 h-10 bg-[#F16232]/10 rounded-full flex items-center justify-center">
                           <IconComponent className="w-5 h-5 text-[#F16232]" />
@@ -133,7 +133,7 @@ const PropertiesInLondon = () => {
                           <div className="text-sm text-gray-500">per month</div>
                         </div>
                       </div>
-                    </div>
+                    </div> */}
 
                     <p className="text-gray-600 text-sm leading-relaxed mb-4">
                       {area.description}
@@ -165,12 +165,12 @@ const PropertiesInLondon = () => {
                       >
                         View Properties
                       </Button>
-                      <Button
+                      {/* <Button
                         variant="outline"
                         className="flex-1 border-[#F16232] text-[#F16232] hover:bg-[#F16232] hover:text-white bg-transparent"
                       >
                         Area Guide
-                      </Button>
+                      </Button> */}
                     </div>
                   </CardContent>
                 </Card>

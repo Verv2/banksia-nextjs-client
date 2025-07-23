@@ -434,7 +434,7 @@ const Partnership = () => {
                     </div>
                     <h3 className="font-bold text-gray-900 mb-2">Email Us</h3>
                     <p className="text-[#F16232] font-semibold">
-                      partners@banksia.com
+                      partners@banksialondon.com
                     </p>
                   </div>
 

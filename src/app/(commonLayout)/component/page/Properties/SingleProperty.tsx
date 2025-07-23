@@ -53,7 +53,7 @@ const SingleProperty = ({ property }: { property: TProperty }) => {
             <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-4 sm:mb-6 gap-4">
               <div className="flex-1">
                 <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3 text-gray-900">
-                  Luxury Villa in {property.city}
+                  {/* title */}
                 </h1>
                 <div className="flex items-center text-gray-600 mb-3 sm:mb-4">
                   <MapPin className="h-4 w-4 sm:h-5 sm:w-5 mr-2 text-[#F16232]" />
@@ -210,7 +210,7 @@ const SingleProperty = ({ property }: { property: TProperty }) => {
                       Coordinates:
                     </p>
                     <p className="text-gray-600 text-sm sm:text-base">
-                      Latitude: {property.lat}, Longitude: {property.lng}
+                      Latitude: , Longitude:
                     </p>
                   </div>
                 </div>

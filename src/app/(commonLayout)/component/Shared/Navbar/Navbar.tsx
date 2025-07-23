@@ -23,7 +23,7 @@ const Navbar = () => {
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-14 lg:h-20 items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
@@ -31,8 +31,8 @@ const Navbar = () => {
                 src={logo}
                 alt="Banksia Logo"
                 width={180}
-                height={60}
-                className="h-8 w-auto sm:h-10"
+                height={64}
+                className="h-12 lg:h-16 w-auto"
               />
             </Link>
           </div>
