@@ -35,3 +35,5 @@ export const getAccessToken = async (code: { code: string }) => {
     throw new Error(errorMessage);
   }
 };
+
+// code=1e9066bd3c1be6e986862dec6ca9ca25eb76f6bc&state=random_generated_state

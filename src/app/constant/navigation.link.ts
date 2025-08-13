@@ -15,4 +15,8 @@ export const navigationLink = [
     name: "Contact",
     link: "/contact",
   },
+  {
+    name: "Payment",
+    link: "/cryptocurrency-payment"
+  }
 ];

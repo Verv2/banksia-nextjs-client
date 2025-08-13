@@ -23,7 +23,7 @@ const About = () => {
       </section>
 
       {/* Main Content */}
-      <section className="py-16 md:py-24">
+      <section className="pt-16 md:pt-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             {/* Introduction */}
