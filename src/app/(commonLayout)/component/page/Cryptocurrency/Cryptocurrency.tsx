@@ -1,15 +1,14 @@
 "use client";
 
+import { createCharge } from "@/actions/payment.action";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import {
   ArrowRight,
-  Bitcoin,
   CheckCircle,
   Clock,
-  Coins,
   CreditCard,
   Shield,
   Zap,
@@ -17,10 +16,40 @@ import {
 import { useState } from "react";
 
 const Cryptocurrency = () => {
-  const [selectedCrypto, setSelectedCrypto] = useState<
-    "bitcoin" | "ethereum" | null
-  >(null);
   const [propertyAddress, setPropertyAddress] = useState("");
+  const [amount, setAmount] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const amt = Number(amount);
+    if (!propertyAddress || Number.isNaN(amt) || amt <= 0) {
+      alert("Please provide a valid address and amount.");
+      return;
+    }
+
+    const payload = {
+      name: propertyAddress,
+      description: `Payment for the property address ${propertyAddress}`,
+      pricing_type: "fixed_price",
+      local_price: {
+        amount: amount,
+        currency: "GBP",
+      },
+    };
+
+    try {
+      const charge = await createCharge(payload);
+      if (charge) {
+        window.open(charge, "_blank");
+      } else {
+        alert("Charge created but no hosted URL returned.");
+      }
+    } catch (err) {
+      alert(`${(err as Error).message}`);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -196,7 +225,8 @@ const Cryptocurrency = () => {
                 </p>
               </CardHeader>
               <CardContent className="p-8">
-                <div className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Property Address */}
                   <div>
                     <label
                       htmlFor="address"
@@ -214,55 +244,34 @@ const Cryptocurrency = () => {
                     />
                   </div>
 
+                  {/* Payable Amount */}
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-4">
-                      Choose Cryptocurrency
+                    <label
+                      htmlFor="amount"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
+                      Payable Amount
                     </label>
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <Card
-                        className={`cursor-pointer transition-all duration-300 ${
-                          selectedCrypto === "bitcoin"
-                            ? "border-2 border-[#F16232] bg-orange-50"
-                            : "border-2 border-gray-200 shadow-lg hover:border-[#F16232] hover:shadow-xl"
-                        }`}
-                        onClick={() => setSelectedCrypto("bitcoin")}
-                      >
-                        <CardContent className="p-6 text-center">
-                          <Bitcoin className="w-12 h-12 text-orange-500 mx-auto mb-3" />
-                          <h3 className="text-lg font-semibold text-gray-900 mb-1">
-                            Bitcoin
-                          </h3>
-                          <p className="text-sm text-gray-600">BTC</p>
-                        </CardContent>
-                      </Card>
-
-                      <Card
-                        className={`cursor-pointer transition-all duration-300 ${
-                          selectedCrypto === "ethereum"
-                            ? "border-2 border-[#F16232] bg-orange-50"
-                            : "border-2 border-gray-200 shadow-lg hover:border-[#F16232] hover:shadow-xl"
-                        }`}
-                        onClick={() => setSelectedCrypto("ethereum")}
-                      >
-                        <CardContent className="p-6 text-center">
-                          <Coins className="w-12 h-12 text-blue-500 mx-auto mb-3" />
-                          <h3 className="text-lg font-semibold text-gray-900 mb-1">
-                            Ethereum
-                          </h3>
-                          <p className="text-sm text-gray-600">ETH</p>
-                        </CardContent>
-                      </Card>
-                    </div>
+                    <Input
+                      id="amount"
+                      type="text"
+                      placeholder="Enter payable amount"
+                      value={amount}
+                      onChange={(e) => setAmount(e.target.value)}
+                      className="w-full"
+                    />
                   </div>
 
+                  {/* Submit Button */}
                   <Button
+                    type="submit"
                     className="w-full bg-[#F16232] hover:bg-[#E55527] text-white py-5 text-lg font-semibold cursor-pointer"
-                    disabled={!propertyAddress || !selectedCrypto}
+                    disabled={!propertyAddress || !amount}
                   >
                     Continue to Payment
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
-                </div>
+                </form>
               </CardContent>
             </Card>
           </div>
@@ -350,3 +359,5 @@ const Cryptocurrency = () => {
 };
 
 export default Cryptocurrency;
+
+// https://docs.cdp.coinbase.com/commerce/introduction/quickstart

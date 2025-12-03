@@ -3,10 +3,10 @@ export const navigationLink = [
     name: "Home",
     link: "/",
   },
-  {
-    name: "Partnership",
-    link: "/partnership",
-  },
+  // {
+  //   name: "Partnership",
+  //   link: "/partnership",
+  // },
   {
     name: "About",
     link: "/about",
