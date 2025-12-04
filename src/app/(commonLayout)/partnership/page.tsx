@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-// import Partnership from "../component/page/Partnership/Partnership";
+import Partnership from "../component/page/Partnership/Partnership";
 
 export const metadata: Metadata = {
   title: "Partnership",
@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 const PartnershipPage = () => {
   return (
     <>
-      {/* <Partnership /> */}
+      <Partnership />
 
-      <h2 className="h-screen flex items-center justify-center">This page is under construction</h2>
+      {/* <h2 className="h-screen flex items-center justify-center">This page is under construction</h2> */}
     </>
   );
 };

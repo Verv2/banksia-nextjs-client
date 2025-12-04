@@ -5,12 +5,14 @@ import {
   AlertTriangle,
   BarChart3,
   CheckCircle,
+  DollarSign,
   Home,
   Mail,
   Shield,
   Star,
   TrendingUp,
   Users,
+  Wallet,
 } from "lucide-react";
 
 const Partnership = () => {
@@ -22,7 +24,7 @@ const Partnership = () => {
         <div className="relative container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <Badge className="mb-6 bg-[#F16232] hover:bg-[#F16232]/90 text-white border-none text-lg px-6 py-2">
-              Partnership Opportunities
+              Turn Your Property Into an Asset
             </Badge>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
               Grow With <span className="text-[#F16232]">Banksia</span>
@@ -31,9 +33,10 @@ const Partnership = () => {
               Become a Partner
             </h2>
             <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
-              Transform your property into a profitable serviced accommodation
-              or HMO with our comprehensive partnership program. From analysis
-              to management, we handle everything.
+              Turn your property into a high-performing serviced accommodation
+              asset with Banksia’s fully managed hospitality operation. We
+              handle every part of the guest journey while you enjoy predictable
+              returns.
             </p>
             {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -56,7 +59,7 @@ const Partnership = () => {
       </section>
 
       {/* Value Proposition Section */}
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -156,7 +159,7 @@ const Partnership = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Partnership Options */}
       <section className="py-20 bg-gray-50">
@@ -167,8 +170,8 @@ const Partnership = () => {
                 Choose Your Partnership Model
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Two flexible options designed to match your investment goals and
-                risk appetite
+                Two flexible owner partnerships designed specifically for
+                serviced accommodation and short-stay hospitality operations.
               </p>
             </div>
 
@@ -176,31 +179,44 @@ const Partnership = () => {
               {/* Option 1 - Performance Management */}
               <Card className="border-none shadow-xl hover:shadow-2xl transition-shadow duration-300">
                 <CardContent className="p-8">
-                  <div className="text-center mb-6">
-                    <div className="w-16 h-16 bg-[#F16232]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <BarChart3 className="w-8 h-8 text-[#F16232]" />
+                  <div className="space-y-4">
+                    <div className="flex gap-4">
+                      <div className="w-16 h-16 bg-[#F16232]/10 rounded-full flex items-center justify-center">
+                        <DollarSign className="w-8 h-8 text-[#F16232]" />
+                      </div>
+                      <div>
+                        {/* <Badge className="bg-[#F16232] text-white mb-4">
+                        Option 1
+                      </Badge> */}
+                        <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                          Revenue Share Operator Model
+                        </h3>
+                        <p className="text-gray-600">
+                          Revenue share model with full property ownership
+                        </p>
+                      </div>
                     </div>
-                    <Badge className="bg-[#F16232] text-white mb-4">
-                      Option 1
-                    </Badge>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                      Performance Management
-                    </h3>
+
                     <p className="text-gray-600">
-                      Revenue share model with full property ownership
+                      Banksia manages the property as{" "}
+                      <b>a serviced accommodation operator</b>, looking after
+                      all guest stays from start to finish. You retain ownership
+                      while Banksia carries out the day-to-day running of the
+                      accommodation under an operator agreement.
                     </p>
                   </div>
 
-                  <div className="space-y-4 mb-8">
+                  <div className="space-y-4 mb-8 mt-4">
                     <div className="flex items-start space-x-3">
                       <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                       <div>
                         <h4 className="font-semibold text-gray-900">
-                          Zero set up headache
+                          No Setup Required
                         </h4>
                         <p className="text-sm text-gray-600">
-                          We photograph, list and price your property on
-                          multiple platforms
+                          Banksia handles preparation, photography,
+                          presentation, and listing creation on hospitality
+                          platforms under Banksia’s own profiles.
                         </p>
                       </div>
                     </div>
@@ -208,23 +224,37 @@ const Partnership = () => {
                       <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                       <div>
                         <h4 className="font-semibold text-gray-900">
-                          End to end guest care
+                          Complete Hospitality Management
                         </h4>
-                        <p className="text-sm text-gray-600">
-                          Bookings, check ins, cleaning, linen and compliance
-                          are covered
-                        </p>
+                        <div className="space-y-2">
+                          <p className="text-sm text-gray-600">
+                            Banksia oversees:
+                          </p>
+                          <ul className="list-disc list-inside text-sm text-gray-600 marker:text-green-500 space-y-1">
+                            <li>guest communications</li>
+                            <li>check-in & check-out</li>
+                            <li>cleaning & linen</li>
+                            <li>presentation & upkeep</li>
+                            <li>safety standards for short-stay operation</li>
+                          </ul>
+                          <p className="text-sm text-gray-600">
+                            All guest relationships are between Banksia and the
+                            guest, not the owner.
+                          </p>
+                        </div>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3">
                       <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                       <div>
                         <h4 className="font-semibold text-gray-900">
-                          Monthly payout
+                          Predictable Operator Share
                         </h4>
                         <p className="text-sm text-gray-600">
-                          You keep full ownership and receive income that rises
-                          with occupancy while utilities remain in your name
+                          You receive an agreed share of the accommodation
+                          income. Banksia does not act as a letting agent and
+                          does not place tenants or manage ASTs (Assured
+                          Shorthold Tenancies)
                         </p>
                       </div>
                     </div>
@@ -239,7 +269,7 @@ const Partnership = () => {
               {/* Option 2 - Guaranteed Rent */}
               <Card className="border-none shadow-xl hover:shadow-2xl transition-shadow duration-300 bg-[#F16232] text-white">
                 <CardContent className="p-8">
-                  <div className="text-center mb-6">
+                  {/* <div className="text-center mb-6">
                     <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Shield className="w-8 h-8 text-white" />
                     </div>
@@ -250,18 +280,41 @@ const Partnership = () => {
                     <p className="text-white/90">
                       Fixed monthly income with zero hassle
                     </p>
+                  </div> */}
+
+                  <div className="space-y-4">
+                    <div className="flex gap-4">
+                      <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
+                        <Wallet className="w-8 h-8 text-white" />
+                      </div>
+                      <div>
+                        {/* <Badge className="bg-[#F16232] text-white mb-4">
+                        Option 1
+                      </Badge> */}
+                        <h3 className="text-2xl font-bold mb-2">
+                          Guaranteed Income Model
+                        </h3>
+                        <p className="text-white/90">
+                          Fixed Monthly Payment With Zero Involvement
+                        </p>
+                      </div>
+                    </div>
+
+                    <p className="text-white/90">
+                      Banksia takes responsibility for running the accommodation
+                      and pays you a set monthly amount for the entire term.
+                    </p>
                   </div>
 
-                  <div className="space-y-4 mb-8">
+                  <div className="space-y-4 mb-8 mt-4">
                     <div className="flex items-start space-x-3">
                       <CheckCircle className="w-5 h-5 text-white flex-shrink-0 mt-0.5" />
                       <div>
                         <h4 className="font-semibold text-white">
-                          Fixed monthly income
+                          Fixed Monthly Payment
                         </h4>
                         <p className="text-sm text-white/80">
-                          Banksia signs an agreement from one year and pays the
-                          same rent every month, bookings or not
+                          The same amount each month unaffected by occupancy.
                         </p>
                       </div>
                     </div>
@@ -269,11 +322,11 @@ const Partnership = () => {
                       <CheckCircle className="w-5 h-5 text-white flex-shrink-0 mt-0.5" />
                       <div>
                         <h4 className="font-semibold text-white">
-                          Bills on us
+                          Utilities & Operation Covered
                         </h4>
                         <p className="text-sm text-white/80">
-                          We or our occupants cover utilities, council tax and
-                          broadband protecting you from cost shocks
+                          Banksia or its guests cover utilities, broadband and
+                          other stay-related essentials (as agreed).
                         </p>
                       </div>
                     </div>
@@ -281,15 +334,20 @@ const Partnership = () => {
                       <CheckCircle className="w-5 h-5 text-white flex-shrink-0 mt-0.5" />
                       <div>
                         <h4 className="font-semibold text-white">
-                          Weekly upkeep
+                          Regular Upkeep
                         </h4>
                         <p className="text-sm text-white/80">
-                          Professional cleaning and routine maintenance keep
-                          your asset in peak condition
+                          Routine cleaning and light maintenance ensure the
+                          property stays in excellent condition.
                         </p>
                       </div>
                     </div>
                   </div>
+                  <p className="text-white/90">
+                    This model ensures hands-off ownership with predictable
+                    returns. Banksia remains the operator, never a letting
+                    agent.
+                  </p>
 
                   {/* <Button className="w-full bg-white text-[#F16232] hover:bg-white/90">
                     Choose Guaranteed Rent
@@ -301,8 +359,58 @@ const Partnership = () => {
         </div>
       </section>
 
-      {/* Why Partners Choose Banksia */}
+      {/* Why Owners Choose Banksia */}
       <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                Why Owners Choose Banksia
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Complete transparency, professional operations, and genuine
+                partnership.
+              </p>
+            </div>
+          </div>
+
+          <div className="max-w-3xl m-auto space-y-4">
+            <div className="flex items-start space-x-3 border-none shadow-xl hover:shadow-2xl transition-shadow duration-300 p-4 rounded-md">
+              <CheckCircle className="w-5 h-5 text-[#F16232] flex-shrink-0 mt-0.5" />
+              <h4 className="font-semibold text-gray-900">
+                No ASTs, tenants, or letting-agency activity
+              </h4>
+            </div>
+            <div className="flex items-start space-x-3 border-none shadow-xl hover:shadow-2xl transition-shadow duration-300 p-4 rounded-md">
+              <CheckCircle className="w-5 h-5 text-[#F16232] flex-shrink-0 mt-0.5" />
+              <h4 className="font-semibold text-gray-900">
+                No client money held on behalf of owners
+              </h4>
+            </div>
+            <div className="flex items-start space-x-3 border-none shadow-xl hover:shadow-2xl transition-shadow duration-300 p-4 rounded-md">
+              <CheckCircle className="w-5 h-5 text-[#F16232] flex-shrink-0 mt-0.5" />
+              <h4 className="font-semibold text-gray-900">
+                Hospitality operator model only
+              </h4>
+            </div>
+            <div className="flex items-start space-x-3 border-none shadow-xl hover:shadow-2xl transition-shadow duration-300 p-4 rounded-md">
+              <CheckCircle className="w-5 h-5 text-[#F16232] flex-shrink-0 mt-0.5" />
+              <h4 className="font-semibold text-gray-900">
+                Fully managed guest care and property upkeep
+              </h4>
+            </div>
+            <div className="flex items-start space-x-3 border-none shadow-xl hover:shadow-2xl transition-shadow duration-300 p-4 rounded-md">
+              <CheckCircle className="w-5 h-5 text-[#F16232] flex-shrink-0 mt-0.5" />
+              <h4 className="font-semibold text-gray-900">
+                Steady income through short-stay demand
+              </h4>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Partners Choose Banksia */}
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -325,8 +433,9 @@ const Partnership = () => {
                     Expert Refurb Teams
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    Expert refurb teams that elevate tired homes into high yield
-                    HMOs or stylish serviced suites
+                    Specialist refurb teams that transform properties into
+                    high-quality short-stay or multi-occupancy accommodation
+                    suitable for serviced living.
                   </p>
                 </CardContent>
               </Card>
@@ -337,11 +446,12 @@ const Partnership = () => {
                     <Users className="w-6 h-6 text-[#F16232]" />
                   </div>
                   <h3 className="font-bold text-gray-900 mb-3">
-                    Local Authority Contracts
+                    Local Authority Bookings
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    Contracts in place with local authorities for social housing
-                    placements providing dependable occupancy
+                    Partnerships with local authorities who book temporary
+                    accommodation through Banksia when short-stay housing
+                    support is required.
                   </p>
                 </CardContent>
               </Card>
@@ -352,12 +462,12 @@ const Partnership = () => {
                     <Shield className="w-6 h-6 text-[#F16232]" />
                   </div>
                   <h3 className="font-bold text-gray-900 mb-3">
-                    Insurance Relationships
+                    Insurance Provider Stays
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    Relationships with insurance relocation providers securing
-                    long stay bookings when households need emergency
-                    accommodation
+                    Established relationships with insurance relocation
+                    providers who book extended stays with Banksia when
+                    policyholders require temporary accommodation.
                   </p>
                 </CardContent>
               </Card>
@@ -368,11 +478,11 @@ const Partnership = () => {
                     <BarChart3 className="w-6 h-6 text-[#F16232]" />
                   </div>
                   <h3 className="font-bold text-gray-900 mb-3">
-                    Transparent Reporting
+                    Operational Performance Insights
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    Transparent reporting with live dashboards so you can track
-                    revenue and occupancy
+                    Clear performance dashboards showing how Banksia’s
+                    short-stay operation is performing across your property.
                   </p>
                 </CardContent>
               </Card>
@@ -386,8 +496,8 @@ const Partnership = () => {
                     National Coverage
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    National coverage and growing demand for flexible quality
-                    accommodation
+                    Expanding national presence and strong demand for flexible
+                    short-stay accommodation.
                   </p>
                 </CardContent>
               </Card>
@@ -401,8 +511,8 @@ const Partnership = () => {
                     Quality Standards
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    Professional corporate landlord operations ensuring
-                    consistent quality and compliance
+                    Professional hospitality operations that maintain consistent
+                    quality and safety standards across all properties.
                   </p>
                 </CardContent>
               </Card>
@@ -458,10 +568,10 @@ const Partnership = () => {
               <div className="flex items-start justify-center space-x-3 max-w-3xl mx-auto">
                 <AlertTriangle className="w-5 h-5 text-white/80 flex-shrink-0 mt-0.5" />
                 <p className="text-sm text-white/80 text-center leading-relaxed">
-                  Banksia operates as a professional corporate landlord.
-                  Earnings may vary in the performance model. Capital
-                  investments in refurbishments can be agreed on a project by
-                  project basis.
+                  Banksia provides operator-led serviced accommodation services.
+                  Banksia does not engage in estate agency, lettings work, or
+                  tenant-finding activity. All stays are managed directly by
+                  Banksia as the operator.
                 </p>
               </div>
             </div>
