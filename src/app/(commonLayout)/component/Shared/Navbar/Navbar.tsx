@@ -47,7 +47,7 @@ const Navbar = () => {
                     <Link
                       href={item.link}
                       className={cn(
-                        "text-sm font-medium transition-colors duration-200 relative",
+                        "text-base font-medium transition-colors duration-200 relative",
                         isActive
                           ? "text-[#F16232] font-semibold"
                           : "text-gray-700 hover:text-[#F16232]",
