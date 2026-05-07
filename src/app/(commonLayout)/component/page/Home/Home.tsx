@@ -3,7 +3,7 @@
 
 import React, { useEffect, useState } from "react";
 // import Hero from "./Hero";
-import HomeProperty from "./HomeProperty";
+// import HomeProperty from "./HomeProperty";
 // import Cities from "./Cities";
 import WhyUs from "./WhyUs";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -47,7 +47,7 @@ const Home = () => {
   return (
     <>
       <Hero />
-      <HomeProperty />
+      {/* <HomeProperty /> */}
       <PropertiesInLondon />
       <WhyUs />
       <ReadyToStart />
