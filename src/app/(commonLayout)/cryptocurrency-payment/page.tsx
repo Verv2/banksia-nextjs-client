@@ -13,12 +13,16 @@ export const metadata: Metadata = {
     "Bitcoin rent London",
     "Ethereum rent London",
   ],
+  alternates: {
+    canonical: "/cryptocurrency-payment",
+  },
   openGraph: {
     title: "Pay Rent with Bitcoin & Ethereum | Banksia",
     description:
       "Settle your Banksia London rent instantly with Bitcoin (BTC) or Ethereum (ETH). No bank delays, no card fees, just enter your property address, review the live crypto price and pay in seconds.",
     type: "website",
     locale: "en_GB",
+    url: "/cryptocurrency-payment",
   },
   twitter: {
     card: "summary_large_image",
