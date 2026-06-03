@@ -1,8 +1,6 @@
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Clock, Mail, Phone } from "lucide-react";
+import ContactForm from "./ContactForm";
 
 const contactDetails = [
   {
@@ -95,32 +93,7 @@ const Contact = () => {
               <h3 className="text-2xl font-semibold text-gray-900 mb-6">
                 Send us a message
               </h3>
-              <form className="flex flex-col gap-5">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name
-                  </label>
-                  <Input type="text" placeholder="Your full name" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Email
-                  </label>
-                  <Input type="email" placeholder="you@example.com" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Message
-                  </label>
-                  <Textarea
-                    placeholder="Type your message here."
-                    className="min-h-[140px]"
-                  />
-                </div>
-                <Button className="w-full bg-[#F16232] hover:bg-[#F16232]/90 text-white transition-colors duration-200">
-                  Send message
-                </Button>
-              </form>
+              <ContactForm />
             </div>
           </div>
         </div>
