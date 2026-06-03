@@ -98,7 +98,7 @@ const Team = () => {
             <div className="grid sm:grid-cols-2 gap-6">
               <a
                 href="mailto:rentals@banksialondon.com"
-                className="group flex items-center justify-center gap-4 bg-white/10 hover:bg-white/20 backdrop-blur rounded-2xl p-6 transition-colors duration-300"
+                className="group flex items-center justify-start gap-4 bg-white/10 hover:bg-white/20 backdrop-blur rounded-2xl p-6 transition-colors duration-300"
               >
                 <div className="w-12 h-12 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
                   <Mail className="w-6 h-6 text-[#F16232]" />
@@ -114,8 +114,8 @@ const Team = () => {
               </a>
 
               <a
-                href="tel:01268538971"
-                className="group flex items-center justify-center gap-4 bg-white/10 hover:bg-white/20 backdrop-blur rounded-2xl p-6 transition-colors duration-300"
+                href="tel:+441268538971"
+                className="group flex items-center justify-start gap-4 bg-white/10 hover:bg-white/20 backdrop-blur rounded-2xl p-6 transition-colors duration-300"
               >
                 <div className="w-12 h-12 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
                   <Phone className="w-6 h-6 text-[#F16232]" />
@@ -124,7 +124,7 @@ const Team = () => {
                   <p className="text-sm uppercase tracking-wide text-white/70">
                     Phone
                   </p>
-                  <p className="text-lg font-semibold">01268 538971</p>
+                  <p className="text-lg font-semibold">+44 1268 538971</p>
                 </div>
               </a>
             </div>
