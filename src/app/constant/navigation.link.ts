@@ -18,5 +18,9 @@ export const navigationLink = [
   {
     name: "Payment",
     link: "/cryptocurrency-payment"
-  }
+  },
+  {
+    name: "Team",
+    link: "/team",
+  },
 ];
