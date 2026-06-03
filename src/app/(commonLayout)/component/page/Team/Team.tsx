@@ -13,17 +13,17 @@ interface TeamMember {
 
 const teamMembers: TeamMember[] = [
   {
-    name: "Hafiza Khatun",
+    name: "Hafiza",
     role: "Delta Operator",
     image: team1,
   },
   {
-    name: "Anirban Dey James",
+    name: "James",
     role: "Delta Operator",
     image: team2,
   },
   {
-    name: "Norbert Bod",
+    name: "Norbert",
     role: "Rental Manager",
     image: team3,
   },
