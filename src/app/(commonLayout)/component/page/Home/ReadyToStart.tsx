@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import React from "react";
+import { Star } from "lucide-react";
+import { siteConfig } from "@/config/site";
 
 const ReadyToStart = () => {
   const router = useRouter();
@@ -31,6 +33,17 @@ const ReadyToStart = () => {
             Make a partnership
           </Button>
         </div>
+
+        {/* Google reviews link */}
+        <a
+          href={siteConfig.googleReviewUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-6 inline-flex items-center gap-2 font-medium text-gray-700 hover:text-[#F16232] transition-colors"
+        >
+          <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+          Read our reviews on Google
+        </a>
       </div>
     </div>
   );

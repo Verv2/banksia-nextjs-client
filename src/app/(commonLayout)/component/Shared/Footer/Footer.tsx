@@ -5,6 +5,7 @@ import prsLogo from "../../../../../assets/logos/prsLogo.png";
 import Image from "next/image";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
+import { siteConfig } from "@/config/site";
 
 const Footer = () => {
   return (
@@ -46,6 +47,15 @@ const Footer = () => {
                 </li>
                 <li className="hover:text-colorPrimary transition-colors">
                   <Link href="/privacy-policy">Privacy Policy</Link>
+                </li>
+                <li className="hover:text-colorPrimary transition-colors">
+                  <a
+                    href={siteConfig.googleReviewUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Reviews on Google
+                  </a>
                 </li>
               </ul>
             </div>

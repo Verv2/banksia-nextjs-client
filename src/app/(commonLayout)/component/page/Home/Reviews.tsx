@@ -1,5 +1,6 @@
-import { Quote } from "lucide-react";
+import { Quote, Star } from "lucide-react";
 import people from "../../../../../assets/images/people.jpg";
+import { siteConfig } from "@/config/site";
 import {
   Carousel,
   CarouselContent,
@@ -54,6 +55,19 @@ const Reviews = () => {
             <CarouselPrevious className="bg-colorPrimary" />
             <CarouselNext className="bg-colorPrimary" />
           </Carousel>
+        </div>
+
+        {/* Google reviews call to action */}
+        <div className="mt-10 flex justify-center">
+          <a
+            href={siteConfig.googleReviewUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-medium text-gray-800 shadow-md transition-colors hover:bg-colorPrimary hover:text-white"
+          >
+            <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+            Read our reviews on Google
+          </a>
         </div>
       </div>
     </section>

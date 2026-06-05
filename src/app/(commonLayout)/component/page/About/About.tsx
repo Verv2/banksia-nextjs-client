@@ -1,5 +1,14 @@
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Home, Key, Sparkles, Users, Wifi } from "lucide-react";
+import {
+  CheckCircle,
+  Home,
+  Key,
+  Sparkles,
+  Star,
+  Users,
+  Wifi,
+} from "lucide-react";
+import { siteConfig } from "@/config/site";
 
 const About = () => {
   return (
@@ -116,6 +125,34 @@ const About = () => {
                   </div>
                 </div>
               </div>
+            </div>
+
+            {/* Google Reviews */}
+            <div className="bg-gradient-to-r from-[#F16232] to-[#E55527] rounded-3xl p-8 md:p-12 text-white text-center mb-16">
+              <div className="flex justify-center mb-4">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star
+                    key={i}
+                    className="w-7 h-7 fill-yellow-400 text-yellow-400"
+                  />
+                ))}
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Loved by our residents
+              </h2>
+              <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                Don&apos;t just take our word for it — see what our community has
+                to say about life at Banksia.
+              </p>
+              <a
+                href={siteConfig.googleReviewUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-white text-[#F16232] font-semibold rounded-full px-8 py-4 shadow-lg hover:bg-gray-100 transition-colors"
+              >
+                <Star className="w-5 h-5 fill-[#F16232] text-[#F16232]" />
+                Read our reviews on Google
+              </a>
             </div>
 
             {/* Call to Action */}

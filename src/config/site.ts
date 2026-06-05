@@ -30,6 +30,9 @@ export const siteConfig = {
     "pay rent with Ethereum",
   ],
   twitterHandle: "@banksialondon",
+  // Public Google reviews / business profile link.
+  googleReviewUrl:
+    "https://www.google.com/search?q=banksia+london+adelaide+road&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOVSBLnIBm_mkVlg9XYin1GZX_R3p4JA-Yr_62Rf69-8NVKZ3MBH9E25CzaM9Hmp62hGin88%3D&uds=ALYpb_l6DyU7gEufbC-T-1UgqmR0jVhGgQAzyXmOgTNMyTK1y5A2k8g_CXhZXa1MxpEwWryh3WKM5KIAEZNLzxd-IFBD9mOvlVO-482jGEHeONqhUdcrRl-gqhh2to7I7Si08W1HUjaq",
 } as const;
 
 export type SiteConfig = typeof siteConfig;
